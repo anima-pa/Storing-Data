@@ -1,0 +1,2 @@
+C:\Users\Anima\Documents\Visual Studio 2017\Projects\helloWorldd\helloWorldd\helloWorldd.UWP\helloWorldd.UWP.csproj;x86
+C:\Users\Anima\Documents\Visual Studio 2017\Projects\helloWorldd\helloWorldd\helloWorldd\helloWorldd.csproj;neutral

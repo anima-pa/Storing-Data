@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="helloWorldd.View.DataBinding">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Slider x:Name="mySlider" Minimum="0" Maximum="100" VerticalOptions="CenterAndExpand"/>
+            <Label FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" BindingContext="{x:Reference mySlider}" Text="{Binding Value}"/>
+             
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="helloWorldd.View.StoreInSqlite">
+    <ContentPage.Content>
+        <StackLayout Padding="20" VerticalOptions="Start">
+            <StackLayout Orientation="Horizontal">
+                <Entry x:Name="Firstname" Placeholder="FirstName" Text="{Binding FirstName}"/>
+                <Entry x:Name="Lastname" Placeholder="LastName" Text="{Binding LastName}"/>
+            </StackLayout>
+            <Entry x:Name="PhoneNumber" Placeholder="PhoneNumber" Text="{Binding PhoneNumber}"/>
+            <Button Text="Add Person" Clicked="Button_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

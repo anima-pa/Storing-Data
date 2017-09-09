@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:convertors="clr-namespace:helloWorldd.Convertors"
+             x:Class="helloWorldd.View.ListViewPage"
+             >
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <convertors:DoubleToIntConvertors x:Key="DecimalToIntegerConvertors"/>
+            <!--
+            Internal Styles
+            
+            <Style 
+                   TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand"/>
+                <Setter Property="FontSize"
+                        Value="Large"/>
+                <Setter Property="TextColor"
+                        Value="Red"/>
+            </Style>
+            -->
+           <!-- External Styles
+            
+            <Style x:Key="BigBlueLabel"
+                   TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand"/>
+                <Setter Property="FontSize"
+                        Value="Large"/>
+                <Setter Property="TextColor"
+                        Value="Blue"/>
+            </Style>
+            <Style x:Key="BigGreenLabel"
+                   TargetType="Label">
+                <Setter Property="HorizontalOptions"
+                        Value="Center"/>
+                <Setter Property="VerticalOptions"
+                        Value="CenterAndExpand"/>
+                <Setter Property="FontSize"
+                        Value="Small"/>
+                <Setter Property="TextColor"
+                        Value="Green"/>
+            </Style>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <ListView ItemsSource="{ Binding People}" HasUnevenRows="True" ItemSelected="ListView_ItemSelected">
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <!--<TextCell Text="{Binding Name}" Detail="{Binding Address}"/>-->
+                        <!--<ImageCell Text="{Binding Name}" Detail="{Binding Address}"
+                                   ImageSource="{Binding ImageSrc}"
+                                   TextColor="Black"
+                                   DetailColor="Gray"/>
+                        <TextCell Text="{Binding LastName}" Detail="{Binding Age, Converter={StaticResource DecimalToIntegerConvertors}}"/>-->
+                        <ViewCell>
+                            <ContentView>
+                                <StackLayout Padding="20">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding FirstName}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding LastName}"  FontSize="20" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding PhoneNumber}" FontSize="15" />
+                                    <Button Text="Back To Entry" Clicked="Button_Clicked"/>
+                                    <!-- <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding FirstName}" Style="{StaticResource BigRedLabel}" FontAttributes="Bold"/>
+                                        <Label Text="{Binding LastName}" Style="{StaticResource BigBlueLabel}" FontSize="20" FontAttributes="Bold"/>
+                                    </StackLayout>
+                                    <Label Text="{Binding Address}" Style="{StaticResource BigGreenLabel}" />-->
+                                </StackLayout>
+                            </ContentView>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
